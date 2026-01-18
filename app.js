@@ -1,9 +1,11 @@
-const express = require('express');
+const express     = require('express');
 const booksRoute  = require('./routes/booksRoutes')
 const usersRoute  = require('./routes/usersRoute')
-const app     = express();
-const PORT    = 3000;
+const cors        = require('cors')
+const app         = express();
+const PORT        = 3000;
 
+app.use(cors());
 
 app.use("/books", booksRoute);
 app.use("/users", usersRoute);
